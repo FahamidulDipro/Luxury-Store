@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import SelectedItem from '../SelectedItem/SelectedItem';
+import Warning from '../Warning/Warning';
 import './Shop.css';
 const Shop = () => {
     const [products,setProduct] = useState([]);
@@ -20,6 +21,7 @@ const Shop = () => {
     useEffect(()=>{
         fetch('data.json').then(res=>res.json()).then(data=>setProduct(data));
     },[])
+
     return (
         <div>
             <h1>Welcome to Luxury Store</h1>
@@ -35,11 +37,27 @@ const Shop = () => {
                         <h2>Selected Items</h2>
                         <div className='selected-items-container'>   
                                 {/* <span> <b>{cart.length}</b></span> */}
-                              
+                                
+
                                     {
-                                        cart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
-                                    }    
+                                           (() => {
+                                            if (cart.length <= 4) {
+                                                    return (
+                                                        cart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
+                                                    )
+                                            }   else{
+                                                return(
+                                                    <Warning></Warning>
+                                                )
+                                               
+                                            }
+                                        })()
+                                    }
+
+                                         
                         </div>
+                        <button className='first-btn'>Choose One For Me</button> 
+                        <button className='second-btn'>Choose Again</button>
                         
                 </section>
             </div>

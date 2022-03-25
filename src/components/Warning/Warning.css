@@ -1,0 +1,10 @@
+.warning-container {
+  border: 2px solid brown;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.warning-msg {
+  color: darkred;
+}

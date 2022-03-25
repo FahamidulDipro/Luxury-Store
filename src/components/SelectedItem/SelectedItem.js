@@ -8,6 +8,7 @@ const SelectedItem = props => {
                  <img src={cart.picture} alt="" />
                  <span>{cart.name}</span>
                  </div>
+              
 
         </div>
     );

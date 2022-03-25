@@ -15,20 +15,24 @@
   background-color: rgb(175, 162, 130);
   border-radius: 10px;
 }
-
-.selected-img-container {
+.first-btn {
+  background-color: goldenrod;
+  margin-right: 20px;
   padding: 10px;
-
-  width: 80%;
-  border: 3px solid gold;
-  margin: 10px;
-  border-radius: 50px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
-.selected-img-container span {
-  margin-left: 20px;
-}
-.selected-img-container img {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
+.second-btn {
+  background-color: darkred;
+  color: white;
+  margin-right: 20px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
