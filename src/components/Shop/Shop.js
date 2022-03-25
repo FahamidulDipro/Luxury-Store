@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
+import SelectedItem from '../SelectedItem/SelectedItem';
 import './Shop.css';
 const Shop = () => {
     const [products,setProduct] = useState([]);
-    const [productName, setProductName] = useState([]);
-    const [productPic, setProductPic] = useState([]);
+    // const [productName, setProductName] = useState([]);
+    // const [productPic, setProductPic] = useState([]);
+    const [cart, setCart] = useState([]);
 
     const addToCartHandler = (item)=>{
-        // console.log('clicked');
-        const productName = item.name;
-        const productPic = item.picture;
-        setProductName(productName);
-        setProductPic(productPic);
+    
+        // const productName = item.name;
+        // const productPic = item.picture;
+        // setProductName(productName);
+        // setProductPic(productPic);
+        const newCart = [...cart,item];
+        setCart(newCart);
     }
     useEffect(()=>{
         fetch('data.json').then(res=>res.json()).then(data=>setProduct(data));
@@ -32,8 +36,16 @@ const Shop = () => {
                         <div className='selected-items-container'>
                         <div>
                             <div className='selected-img-container'>
-                                <img src={productPic} alt="product" />
-                                <span> <b>{productName}</b></span>
+                                
+                                {/* <span> <b>{cart.length}</b></span> */}
+                              
+                                    {
+                                        cart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
+                                    }
+                                
+                                 
+                               
+                                 
                             </div>
                             
                         </div>
@@ -45,6 +57,9 @@ const Shop = () => {
            
             
         </div>
+
+
+
     );
 };
 
