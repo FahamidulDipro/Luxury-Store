@@ -1,0 +1,32 @@
+.single-product-container {
+  text-align: left;
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid rgb(255, 183, 0);
+  border-radius: 20px;
+}
+
+.image-container {
+  height: 250px;
+  width: 100%;
+}
+.image-container img {
+  height: 250px;
+  width: 100%;
+  border-radius: 20px;
+}
+.addToCart-btn {
+  background-color: rgb(195, 142, 7);
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.addToCart-btn:hover {
+  background-color: steelblue;
+  color: whitesmoke;
+}

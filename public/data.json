@@ -1,0 +1,68 @@
+[
+    {
+      "id": "623e0e39c099a2f42e7ce7d9",
+      "picture": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "name": "Naga Gold & Silver Dragon Station Chain Bracelet",
+      "price": 695
+    },
+    {
+      "id": "623e0e398071d6198e3673a4",
+      "picture": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      "name": "Solid Gold Petite Micropave ",
+      "price": 595
+    },
+    {
+      "id": "623e0e39af975cb4be0f4004",
+      "picture": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "name": "White Gold Plated Princess",
+      "price": 395
+    },
+    {
+      "id": "623e0e39354c62b9153ba5e2",
+      "picture": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+      "name": "Rose Gold Plated Double Flared Tunnel Plug Earrings",
+      "price": 295
+    },
+    {
+      "id": "623e0e3997357f399a92ea39",
+      "picture": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "name": "Three gold colored studded ring",
+      "price": 999
+    },
+    {
+      "id": "623e0e39b12aa40782ada315",
+      "picture": "https://cdn.pixabay.com/photo/2018/08/16/19/56/wedding-rings-3611277_960_720.jpg",
+      "name": "Engagement Ring",
+      "price": 795
+    },
+    {
+      "id": "623e0e39b12aa40782ada335",
+      "picture": "https://cdn.pixabay.com/photo/2016/11/29/03/07/crown-1866986_960_720.jpg",
+      "name": "Tiara Crown",
+      "price": 1095
+    },
+    {
+      "id": "623e0e39b12aa40782ada3a5",
+      "picture": "https://cdn.pixabay.com/photo/2017/08/06/17/13/diamond-2594307_960_720.jpg",
+      "name": "Diamond Ring",
+      "price": 895
+    },
+    {
+      "id": "623e0e39b12aa40782ada3475",
+      "picture": "https://cdn.pixabay.com/photo/2017/08/02/01/34/pocket-watch-2569573_960_720.jpg",
+      "name": "Pocket Watch Locket",
+      "price": 495
+    },
+    {
+      "id": "623e0e39b12aa40782ada375",
+      "picture": "https://cdn.pixabay.com/photo/2017/03/29/23/38/amethyst-2186842_960_720.jpg",
+      "name": "Vintage Purple Diamond Ring",
+      "price": 1695
+    },
+    {
+      "id": "623e0e39b12aa40782qwa345",
+      "picture": "https://cdn.pixabay.com/photo/2018/11/02/16/50/gold-jewelry-3790542_960_720.jpg",
+      "name": "Gold Diamond Bracelet",
+      "price": 895
+    }
+  ]

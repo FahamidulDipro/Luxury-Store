@@ -1,0 +1,17 @@
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.shop-container {
+  display: flex;
+  justify-content: space-around;
+}
+.products-container {
+  flex: 3;
+}
+.cart-container {
+  flex: 1;
+  background-color: rgb(175, 162, 130);
+  border-radius: 10px;
+}
