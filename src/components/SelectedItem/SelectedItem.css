@@ -1,0 +1,18 @@
+.selected-img-container {
+  padding: 10px;
+  display: flex;
+  width: 80%;
+  border: 3px solid gold;
+  margin: 10px;
+  border-radius: 50px;
+}
+.selected-img-container span {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.selected-img-container img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}

@@ -1,13 +1,13 @@
 import React from 'react';
-
+import './SelectedItem.css';
 const SelectedItem = props => {
     const {cart} = props;
     return (
         <div>
-             <div>
+             <div className='selected-img-container'>
                  <img src={cart.picture} alt="" />
                  <span>{cart.name}</span>
-             </div>
+                 </div>
 
         </div>
     );

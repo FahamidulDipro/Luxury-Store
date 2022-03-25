@@ -33,22 +33,12 @@ const Shop = () => {
 
                 <section className='cart-container'>
                         <h2>Selected Items</h2>
-                        <div className='selected-items-container'>
-                        <div>
-                            <div className='selected-img-container'>
-                                
+                        <div className='selected-items-container'>   
                                 {/* <span> <b>{cart.length}</b></span> */}
                               
                                     {
                                         cart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
-                                    }
-                                
-                                 
-                               
-                                 
-                            </div>
-                            
-                        </div>
+                                    }    
                         </div>
                         
                 </section>
