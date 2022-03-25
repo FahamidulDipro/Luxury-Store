@@ -3,9 +3,15 @@ import Product from '../Product/Product';
 import './Shop.css';
 const Shop = () => {
     const [products,setProduct] = useState([]);
+    const [productName, setProductName] = useState([]);
+    const [productPic, setProductPic] = useState([]);
 
-    const addToCartHandler = ()=>{
-        console.log('clicked');
+    const addToCartHandler = (item)=>{
+        // console.log('clicked');
+        const productName = item.name;
+        const productPic = item.picture;
+        setProductName(productName);
+        setProductPic(productPic);
     }
     useEffect(()=>{
         fetch('data.json').then(res=>res.json()).then(data=>setProduct(data));
@@ -17,15 +23,22 @@ const Shop = () => {
             <div className='shop-container'>
                 <section className='products-container'>
                         {
-                            products.map(product=><Product key={product.id} product={product} handler={addToCartHandler}></Product>)
+                            products.map(product=><Product key={product.id} product={product} handler={()=>addToCartHandler(product)}></Product>)
                         }
                 </section>
 
                 <section className='cart-container'>
                         <h2>Selected Items</h2>
+                        <div className='selected-items-container'>
                         <div>
-                            <p><b>Name:</b></p>
+                            <div className='selected-img-container'>
+                                <img src={productPic} alt="product" />
+                                <span> <b>{productName}</b></span>
+                            </div>
+                            
                         </div>
+                        </div>
+                        
                 </section>
             </div>
            
