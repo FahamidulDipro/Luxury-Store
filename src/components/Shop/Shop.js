@@ -9,7 +9,6 @@ import './Shop.css';
 const Shop = () => {
     const [products,setProduct] = useState([]);
     const [cart, setCart] = useState([]);
-
     const addToCartHandler = (item)=>{
         const newCart = [...cart,item];
         setCart(newCart);
@@ -29,6 +28,17 @@ const Shop = () => {
         }    
     }
 
+    //Removing Duplicate items
+    const onlyUnique =(value,index,self)=>{
+        return self.indexOf(value) === index;
+    }
+    const uniqueCart = cart.filter(onlyUnique);
+    console.log(uniqueCart);
+    
+
+
+
+//Removing random items
    const removeRandomCart =  ()=>{
        setRandomCart([]);
        setRandomPic([]);
@@ -44,7 +54,7 @@ const Shop = () => {
     useEffect(()=>{
         fetch('data.json').then(res=>res.json()).then(data=>setProduct(data));
     },[])
-
+    
     return (
         <div>
             <h1>Welcome to <span className='store-name'>Luxury Store</span></h1>
@@ -69,7 +79,7 @@ const Shop = () => {
                                             if (cart.length <= 4) {
                                                 
                                                     return (
-                                                        cart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
+                                                        uniqueCart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
                                                     )
                                             }   else{
                                                 
@@ -117,11 +127,7 @@ const Shop = () => {
                                                     )
                                             } 
                                         })()
-                        }
-
-
-
-                        
+                        }       
                         
                 </section>
             </div>
@@ -129,8 +135,6 @@ const Shop = () => {
            
             
         </div>
-
-
 
     );
 };

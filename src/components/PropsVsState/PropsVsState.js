@@ -5,8 +5,9 @@ const PropsVsState = () => {
         <div className='qa-container'>
             <h2>Whate are the differences between props and states?</h2>
             
+            <h3>Differences between Props and States</h3>
             <table>
-                <thead>Difference between Props and State</thead>
+                 
                 <tbody>
                     <tr>
                     <th><b>Props</b></th>
