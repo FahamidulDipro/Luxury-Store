@@ -33,3 +33,10 @@
   background-color: steelblue;
   color: whitesmoke;
 }
+
+@media only screen and (max-width: 600px) {
+  .single-product-container {
+    width: 80%;
+    margin: 10px;
+  }
+}

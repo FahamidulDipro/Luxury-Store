@@ -5,7 +5,7 @@ import './Product.css';
 const Product = props => {
     //Using Destructuring to access object properties
     const {product,handler} = props;
-    const {id,picture,name,price} = product;
+    const {picture,name,price} = product;
     return (
         <div className='single-product-container'>
             <div className='image-container'>
