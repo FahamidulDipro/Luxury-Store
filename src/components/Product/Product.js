@@ -8,7 +8,7 @@ const Product = props => {
     return (
         <div className='single-product-container'>
             <div className='image-container'>
-            <img src={picture} alt="product-image" />
+            <img src={picture} alt="productImage" />
             </div>
              <h3>{name}</h3>
              <p><b>Price: </b>{price}</p>

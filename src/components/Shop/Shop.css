@@ -2,7 +2,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-
+.store-name {
+  color: goldenrod;
+}
 .shop-container {
   display: flex;
   justify-content: space-around;
@@ -55,4 +57,13 @@
 .random-item-img-container {
   display: flex;
   justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .products-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .shop-container {
+    flex-direction: column;
+  }
 }

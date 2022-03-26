@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
+import RandomBest from '../RandomBest/RandomBest';
 import SelectedItem from '../SelectedItem/SelectedItem';
 import Warning from '../Warning/Warning';
 import './Shop.css';
+
+//Shop component to display all products and cart
 const Shop = () => {
     const [products,setProduct] = useState([]);
     const [cart, setCart] = useState([]);
@@ -14,49 +17,70 @@ const Shop = () => {
     //Random Item Choosing Handler
     const [randomCart,setRandomCart] = useState([]);
     const [randomPic,setRandomPic] = useState([]);
+    const [chooseStatus,setChooseStatus] = useState(false);
     const chooseOne = ()=>{
           let random = Math.floor(Math.random()*cart.length);
           const randomCart = cart[random].name;
           const randomPic = cart[random].picture;
           setRandomCart(randomCart);
-          setRandomPic(randomPic);
-          
-            
+          setRandomPic(randomPic); 
+          for(var i = 0; i<cart.length;i++){
+            delete cart[i];
+        }    
     }
+
+   const removeRandomCart =  ()=>{
+       setRandomCart([]);
+       setRandomPic([]);
+   }
+    // Removing items
+    const [status,setStatus] = useState(true);
+     const removeCart = ()=>{
+        const empty = [];
+        //Making the remaining cart empty
+        setCart(empty);
+     }
+    //Getting data from json file
     useEffect(()=>{
         fetch('data.json').then(res=>res.json()).then(data=>setProduct(data));
     },[])
 
     return (
         <div>
-            <h1>Welcome to Luxury Store</h1>
-            <p>Please choose any 4 items</p>
+            <h1>Welcome to <span className='store-name'>Luxury Store</span></h1>
+            <h3>Please choose any 4 items</h3>
             <div className='shop-container'>
                 <section className='products-container'>
                         {
-                            products.map(product=><Product key={product.id} product={product} handler={()=>addToCartHandler(product)}></Product>)
+                            products.map(product=><Product key={product.id} product={product} handler={()=>{
+                                addToCartHandler(product);
+                                setStatus(true);
+                                setChooseStatus();                                
+                            
+                            }}></Product>)
                         }
                 </section>
 
                 <section className='cart-container'>
-                        <h2>Selected Items</h2>
+                        <h2 >Selected Items</h2>
                         <div className='selected-items-container'>   
-                                {/* <span> <b>{cart.length}</b></span> */}
-                                
-
                                     {
-                                           (() => {
+                                          status? (() => {
                                             if (cart.length <= 4) {
+                                                
                                                     return (
                                                         cart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
                                                     )
                                             }   else{
+                                                
                                                 return(
+                                                    // Showing warning message for adding more than 4 items 
                                                     <Warning></Warning>
+                                                    
                                                 )
                                                
                                             }
-                                        })()
+                                        })():null
                                     }
 
                                          
@@ -69,15 +93,26 @@ const Shop = () => {
                                                     return (
                                                        <div>
                                                             
-                                                           <div className='random-item-container'>
-                                                               <h3>We found the best item for you !!!</h3>
-                                                               <div className='random-item-img-container'>
-                                                                    <img src={randomPic} alt="" /> <span>{randomCart}</span>
-                                                               </div>
-                                                              
-                                                            </div>
-                                                            <button className='first-btn' onClick={chooseOne}>Choose One For Me</button> 
-                                                            <button className='second-btn'>Choose Again</button>
+                                                            {
+                                                                status?<RandomBest randomPic={randomPic} randomCart={randomCart} chooseStatus={chooseStatus}></RandomBest>: null
+                                                            }
+                                                            
+                                                            <button className='first-btn' onClick={
+                                                                ()=>{
+                                                                    chooseOne();
+                                                                    setChooseStatus(true); 
+                                                                    
+                                                                }
+                                                                
+                                                                } >Choose One For Me</button> 
+                                                            <button className='second-btn' onClick={
+                                                                ()=>{
+                                                                    setStatus(false);
+                                                                    removeCart();
+                                                                    removeRandomCart();
+                                                                }
+                                                                
+                                                                }>Choose Again</button>
                                                        </div> 
                                                     )
                                             } 
