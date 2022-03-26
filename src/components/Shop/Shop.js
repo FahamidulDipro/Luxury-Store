@@ -9,10 +9,22 @@ import './Shop.css';
 const Shop = () => {
     const [products,setProduct] = useState([]);
     const [cart, setCart] = useState([]);
+
+
+     //Removing Duplicate items and adding only 1 unique item 
+     const onlyUnique =(value,index,self)=>{
+        return self.indexOf(value) === index;
+     }
+
+
     const addToCartHandler = (item)=>{
         const newCart = [...cart,item];
-        setCart(newCart);
+        const newUniqueCart = newCart.filter(onlyUnique);
+        setCart(newUniqueCart);
     }
+
+
+    
     //Random Item Choosing Handler
     const [randomCart,setRandomCart] = useState([]);
     const [randomPic,setRandomPic] = useState([]);
@@ -28,15 +40,7 @@ const Shop = () => {
         }    
     }
 
-    //Removing Duplicate items
-    const onlyUnique =(value,index,self)=>{
-        return self.indexOf(value) === index;
-    }
-    const uniqueCart = cart.filter(onlyUnique);
-    console.log(uniqueCart);
-    
-
-
+   
 
 //Removing random items
    const removeRandomCart =  ()=>{
@@ -65,7 +69,8 @@ const Shop = () => {
                             products.map(product=><Product key={product.id} product={product} handler={()=>{
                                 addToCartHandler(product);
                                 setStatus(true);
-                                setChooseStatus();                                
+                                setChooseStatus();
+                                                             
                             
                             }}></Product>)
                         }
@@ -79,7 +84,7 @@ const Shop = () => {
                                             if (cart.length <= 4) {
                                                 
                                                     return (
-                                                        uniqueCart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
+                                                        cart.map(singleItem=><SelectedItem  key={singleItem.id} cart={singleItem}></SelectedItem>)
                                                     )
                                             }   else{
                                                 
