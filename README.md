@@ -1,3 +1,3 @@
-### Name: Luxury Store
+# Name: Luxury Store
 
 ## Live site:
