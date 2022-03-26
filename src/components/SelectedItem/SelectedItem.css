@@ -2,7 +2,6 @@
   padding: 10px;
   display: flex;
   width: 80%;
-  border: 3px solid gold;
   margin: 10px;
   border-radius: 50px;
 }
@@ -15,15 +14,4 @@
   height: 70px;
   width: 70px;
   border-radius: 50%;
-}
-
-.first-btn {
-  background-color: goldenrod;
-  margin-right: 20px;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  outline: none;
-  border: 2px solid green;
 }

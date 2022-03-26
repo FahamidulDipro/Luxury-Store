@@ -36,3 +36,23 @@
   outline: none;
   border: none;
 }
+
+.random-item-container {
+  padding: 20px;
+  background-color: gold;
+  margin: 10px;
+  border-radius: 20px;
+}
+.random-item-container span {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.random-item-img-container img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.random-item-img-container {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -5,18 +5,23 @@ import Warning from '../Warning/Warning';
 import './Shop.css';
 const Shop = () => {
     const [products,setProduct] = useState([]);
-    // const [productName, setProductName] = useState([]);
-    // const [productPic, setProductPic] = useState([]);
     const [cart, setCart] = useState([]);
 
     const addToCartHandler = (item)=>{
-    
-        // const productName = item.name;
-        // const productPic = item.picture;
-        // setProductName(productName);
-        // setProductPic(productPic);
         const newCart = [...cart,item];
         setCart(newCart);
+    }
+    //Random Item Choosing Handler
+    const [randomCart,setRandomCart] = useState([]);
+    const [randomPic,setRandomPic] = useState([]);
+    const chooseOne = ()=>{
+          let random = Math.floor(Math.random()*cart.length);
+          const randomCart = cart[random].name;
+          const randomPic = cart[random].picture;
+          setRandomCart(randomCart);
+          setRandomPic(randomPic);
+          
+            
     }
     useEffect(()=>{
         fetch('data.json').then(res=>res.json()).then(data=>setProduct(data));
@@ -56,8 +61,32 @@ const Shop = () => {
 
                                          
                         </div>
-                        <button className='first-btn'>Choose One For Me</button> 
-                        <button className='second-btn'>Choose Again</button>
+
+                                    {/* After adding 4 items these two button will appear */}
+                        {
+                                           (() => {
+                                            if (cart.length === 4) {
+                                                    return (
+                                                       <div>
+                                                            
+                                                           <div className='random-item-container'>
+                                                               <h3>We found the best item for you !!!</h3>
+                                                               <div className='random-item-img-container'>
+                                                                    <img src={randomPic} alt="" /> <span>{randomCart}</span>
+                                                               </div>
+                                                              
+                                                            </div>
+                                                            <button className='first-btn' onClick={chooseOne}>Choose One For Me</button> 
+                                                            <button className='second-btn'>Choose Again</button>
+                                                       </div> 
+                                                    )
+                                            } 
+                                        })()
+                        }
+
+
+
+                        
                         
                 </section>
             </div>
