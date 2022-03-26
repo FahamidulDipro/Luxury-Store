@@ -1,9 +1,11 @@
 .single-product-container {
   text-align: left;
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
-  border: 3px solid rgb(255, 183, 0);
+  /* border: 3px solid rgb(255, 183, 0); */
   border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 4px 8px 0 rgb(88, 63, 1), 0 6px 20px 0 rgba(92, 67, 2, 0.541);
 }
 
 .image-container {
