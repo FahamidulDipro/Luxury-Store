@@ -1,6 +1,6 @@
 # Name: Luxury Store
 
-## Live site:
+## Live site: https://623f1d7da8b5c61f0766d874--timely-zabaione-a9fc94.netlify.app/
 
 ## Description
 
